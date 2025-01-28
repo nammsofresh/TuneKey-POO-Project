@@ -136,6 +136,7 @@ sfml-audio.lib
   <ItemGroup>
     <ClCompile Include="ConsoleApplication2.cpp" />
     <ClCompile Include="Guitare.cpp" />
+    <ClCompile Include="Instrument.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Piano.cpp" />
     <ClCompile Include="TuneKey.cpp" />
