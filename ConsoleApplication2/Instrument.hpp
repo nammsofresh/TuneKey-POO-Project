@@ -2,12 +2,19 @@
 #define INSTRUMENT_HPP
 
 #include <string>
+#include <iostream>
 using namespace std;
 
 class Instrument {
+private:
+    string nom;
 public:
-    virtual ~Instrument() = default;
-    virtual void jouerNote(const string& note, const string& rythme) const = 0;
+    Instrument(string n);
+
+    virtual void jouer_note(string note, string rythme);
+    virtual void jouer_part(string part, string rythme, string instrument);
+
+    string get_nom();
 };
 
 #endif // INSTRUMENT_HPP

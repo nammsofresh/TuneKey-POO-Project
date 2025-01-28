@@ -1,7 +1,7 @@
 #include "TuneKey.hpp"
 
 int main() {
-    TuneKey app;
-    app.demarrerApplication();
+    TuneKey tuneKey;
+    tuneKey.run();
     return 0;
 }

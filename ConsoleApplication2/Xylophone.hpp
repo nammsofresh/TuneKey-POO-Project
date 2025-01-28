@@ -5,7 +5,9 @@
 
 class Xylophone : public Instrument {
 public:
-    void jouerNote(const string& note, const string& rythme) const override;
+    Xylophone();
+    void jouer_note(string note, string rythme) override;
+    // Pas besoin de redéfinir jouer_part
 };
 
 #endif // XYLOPHONE_HPP

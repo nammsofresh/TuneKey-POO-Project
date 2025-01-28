@@ -1,32 +1,21 @@
 #ifndef TUNEKEY_HPP
 #define TUNEKEY_HPP
 
-#include <iostream>
-#include <string>
 #include <memory>
-#include <map>
-#include <vector>
 #include "Instrument.hpp"
-#include "Piano.hpp"
-#include "Xylophone.hpp"
-#include "Guitare.hpp"
-
-using namespace std;
 
 class TuneKey {
 private:
-    unique_ptr<Instrument> instrumentSelectionne;
-    map<string, double> frequenceNotes;
-
-    void afficherMenuPrincipal() const;
-    void selectionnerInstrument();
-    void jouerUneNote();
-    void lireUnePartition();
-    void initialiserNotes();
+    std::unique_ptr<Instrument> instrument;
 
 public:
     TuneKey();
-    void demarrerApplication();
+
+    void afficher_menu();
+    void choisir_instrument();
+    void jouer_note();
+    void jouer_part();
+    void run();
 };
 
 #endif // TUNEKEY_HPP
