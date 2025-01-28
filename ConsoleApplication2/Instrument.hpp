@@ -10,4 +10,4 @@ public:
     virtual void jouerNote(const string& note, const string& rythme) const = 0;
 };
 
-#endif
+#endif // INSTRUMENT_HPP

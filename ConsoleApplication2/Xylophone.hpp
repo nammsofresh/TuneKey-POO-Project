@@ -8,4 +8,4 @@ public:
     void jouerNote(const string& note, const string& rythme) const override;
 };
 
-#endif
+#endif // XYLOPHONE_HPP
