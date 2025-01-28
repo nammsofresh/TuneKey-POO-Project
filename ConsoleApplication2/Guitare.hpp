@@ -5,7 +5,8 @@
 
 class Guitare : public Instrument {
 public:
-    void jouerNote(const string& note, const string& rythme) const override;
+    Guitare();
+    void jouer_note(string note, string rythme) override;
 };
 
 #endif // GUITARE_HPP

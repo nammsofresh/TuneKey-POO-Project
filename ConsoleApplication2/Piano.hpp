@@ -5,7 +5,8 @@
 
 class Piano : public Instrument {
 public:
-    void jouerNote(const string& note, const string& rythme) const override;
+    Piano();
+    void jouer_note(string note, string rythme) override;
 };
 
 #endif // PIANO_HPP
