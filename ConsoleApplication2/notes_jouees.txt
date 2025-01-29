@@ -1,3 +1,1 @@
-E44 normal
-F4 normal
-F5 normal
+C5 lent

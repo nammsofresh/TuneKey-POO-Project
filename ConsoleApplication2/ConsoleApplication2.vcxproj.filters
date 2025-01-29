@@ -15,9 +15,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="ConsoleApplication2.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="App.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -55,7 +52,14 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <Text Include="starwars.txt" />
-    <Text Include="mario.txt" />
+    <Text Include="mario.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="starwars.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="notes_jouees.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
   </ItemGroup>
 </Project>

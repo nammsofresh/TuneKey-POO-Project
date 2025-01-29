@@ -1,11 +1,17 @@
-#include "Xylophone.hpp"
-#include <iostream>
-#include <map>
-#include <windows.h> // Pour Beep
+#include "Xylophone.hpp"    
+#include <iostream>        
+#include <map>              // Pour utiliser les structures de données associatives (map)
+#include <windows.h>        // Pour utiliser la fonction Beep sous Windows, permettant de générer un son
+using namespace std;        
 
+// Constructeur de la classe Xylophone
+// Le constructeur initialise l'objet Xylophone en appelant le constructeur de la classe parente Instrument
+// en lui passant "Xylophone" comme nom de l'instrument.
 Xylophone::Xylophone() : Instrument("Xylophone") {}
 
+// Méthode pour jouer une note sur le xylophone
 void Xylophone::jouerNote(const string& note, const string& rythme) {
+    // Tableau associatif (map) reliant chaque note musicale à sa fréquence correspondante en Hertz.
     map<string, int> noteVersFrequence = {
         {"B0", 31}, {"C1", 33}, {"C#1", 35}, {"D1", 37}, {"D#1", 39}, {"E1", 41}, {"F1", 44}, {"F#1", 46}, {"G1", 49}, {"G#1", 52},
         {"A1", 55}, {"A#1", 58}, {"B1", 62}, {"C2", 65}, {"C#2", 69}, {"D2", 73}, {"D#2", 78}, {"E2", 82}, {"F2", 87}, {"F#2", 93},
@@ -19,22 +25,35 @@ void Xylophone::jouerNote(const string& note, const string& rythme) {
         {"G#7", 3322}, {"A7", 3520}, {"A#7", 3729}, {"B7", 3951}, {"C8", 4186}, {"C#8", 4435}, {"D8", 4699}, {"D#8", 4978}
     };
 
+    // Tableau associatif (map) qui définit la durée de chaque rythme (lent, normal, rapide)
     map<string, float> rythmeMap = {
-        {"lent", 2.0}, {"normal", 1.0}, {"rapide", 0.5}
+        {"lent", 2.0},    // Un rythme lent dure 2 fois plus longtemps
+        {"normal", 1.0},  // Un rythme normal a une durée standard
+        {"rapide", 0.5}   // Un rythme rapide dure la moitié du temps normal
     };
 
-    // Jouer la note
+    // Vérification si la note existe dans le tableau noteVersFrequence
     if (noteVersFrequence.find(note) != noteVersFrequence.end()) {
+        // Affichage de la note jouée et du rythme dans la console
         cout << "[Xylophone - " << rythme << "] : " << note << "\n";
+
+        // Calcul de la durée de la note en millisecondes en fonction du rythme choisi
         DWORD duration = static_cast<DWORD>(1000 * rythmeMap[rythme]);
+
+        // Utilisation de la fonction Beep pour jouer la note à la fréquence correspondante
         Beep(noteVersFrequence[note], duration);
     }
     else {
+        // Affichage d'un message d'erreur si la note n'est pas reconnue
         cout << "Note inconnue : " << note << "\n";
     }
 }
 
+// Méthode pour jouer une partition depuis un fichier
 void Xylophone::jouerPartition(const string& cheminFichier, const string& rythme) {
+    // Affichage du chemin du fichier et du rythme dans la console
     cout << "[Xylophone] Jouer la partition depuis le fichier : " << cheminFichier << " avec le rythme : " << rythme << "\n";
+
+    // Appel de la méthode jouerPartition de la classe parente Instrument pour traiter la partition
     Instrument::jouerPartition(cheminFichier, rythme);
 }

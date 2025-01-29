@@ -1,11 +1,15 @@
 #include "Guitare.hpp"
 #include <iostream>
 #include <map>
-#include <windows.h>
+#include <windows.h> // Pour utiliser la fonction Beep sous Windows
+using namespace std;
 
+// Constructeur de la classe Guitare
 Guitare::Guitare() : Instrument("Guitare") {}
 
+// Méthode pour jouer une note sur la guitare
 void Guitare::jouerNote(const string& note, const string& rythme) {
+    // Tableau associatif qui relie chaque note à sa fréquence en Hertz
     map<string, int> noteVersFrequence = {
         {"B0", 31}, {"C1", 33}, {"C#1", 35}, {"D1", 37}, {"D#1", 39}, {"E1", 41}, {"F1", 44}, {"F#1", 46}, {"G1", 49}, {"G#1", 52},
         {"A1", 55}, {"A#1", 58}, {"B1", 62}, {"C2", 65}, {"C#2", 69}, {"D2", 73}, {"D#2", 78}, {"E2", 82}, {"F2", 87}, {"F#2", 93},
@@ -19,16 +23,34 @@ void Guitare::jouerNote(const string& note, const string& rythme) {
         {"G#7", 3322}, {"A7", 3520}, {"A#7", 3729}, {"B7", 3951}, {"C8", 4186}, {"C#8", 4435}, {"D8", 4699}, {"D#8", 4978}
     };
 
+    // Tableau associatif qui définit la durée de chaque rythme
     map<string, float> rythmeMap = {
-        {"lent", 2.0}, {"normal", 1.0}, {"rapide", 0.5}
+        {"lent", 2.0},   // Un rythme lent dure 2 fois plus longtemps
+        {"normal", 1.0}, // Un rythme normal a une durée standard
+        {"rapide", 0.5}  // Un rythme rapide dure la moitié du temps normal
     };
 
-    // Jouer la note
-    cout << "[Guitare - " << rythme << "] : " << note << "\n";
-    Beep(noteVersFrequence[note], static_cast<DWORD>(1000 * rythmeMap[rythme]));
+    // Vérification si la note existe dans le tableau noteVersFrequence
+    if (noteVersFrequence.find(note) != noteVersFrequence.end()) {
+        // Affichage de la note jouée avec son rythme
+        cout << "[Guitare - " << rythme << "] : " << note << "\n";
+
+        // Calcul de la durée de la note en millisecondes en fonction du rythme choisi
+        DWORD duration = static_cast<DWORD>(1000 * rythmeMap[rythme]);
+
+        // Utilisation de la fonction Beep pour jouer la note avec la fréquence correspondante
+        Beep(noteVersFrequence[note], duration);
+    }
+    else {
+        // Affichage d'un message d'erreur si la note n'est pas reconnue
+        cout << "Note inconnue : " << note << "\n";
+    }
 }
 
+// Méthode pour jouer une partition
 void Guitare::jouerPartition(const string& cheminFichier, const string& rythme) {
     cout << "[Guitare] Jouer la partition depuis le fichier : " << cheminFichier << " avec le rythme : " << rythme << "\n";
+
+    // Appel de la méthode de la classe mère Instrument pour lire et jouer la partition
     Instrument::jouerPartition(cheminFichier, rythme);
 }
