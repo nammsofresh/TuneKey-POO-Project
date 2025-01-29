@@ -84,10 +84,10 @@
             <mxRectangle x="130" y="380" width="160" height="26" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="R7TlRQkgfvPTtNtFlZqC-12" value="+jouerPartition()" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="R7TlRQkgfvPTtNtFlZqC-8">
+        <mxCell id="R7TlRQkgfvPTtNtFlZqC-33" value="+Guitare()" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="R7TlRQkgfvPTtNtFlZqC-8">
           <mxGeometry y="26" width="160" height="26" as="geometry" />
         </mxCell>
-        <mxCell id="R7TlRQkgfvPTtNtFlZqC-33" value="+Guitare()" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="R7TlRQkgfvPTtNtFlZqC-8">
+        <mxCell id="R7TlRQkgfvPTtNtFlZqC-12" value="+jouerPartition()" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="R7TlRQkgfvPTtNtFlZqC-8">
           <mxGeometry y="52" width="160" height="26" as="geometry" />
         </mxCell>
         <mxCell id="R7TlRQkgfvPTtNtFlZqC-36" value="+jouerNote()" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="R7TlRQkgfvPTtNtFlZqC-8">
@@ -98,10 +98,10 @@
             <mxRectangle x="130" y="380" width="160" height="26" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="R7TlRQkgfvPTtNtFlZqC-17" value="+jouerPartition()" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="R7TlRQkgfvPTtNtFlZqC-13">
+        <mxCell id="R7TlRQkgfvPTtNtFlZqC-34" value="+Xylophone()" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="R7TlRQkgfvPTtNtFlZqC-13">
           <mxGeometry y="26" width="160" height="26" as="geometry" />
         </mxCell>
-        <mxCell id="R7TlRQkgfvPTtNtFlZqC-34" value="+Xylophone()" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="R7TlRQkgfvPTtNtFlZqC-13">
+        <mxCell id="R7TlRQkgfvPTtNtFlZqC-17" value="+jouerPartition()" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="R7TlRQkgfvPTtNtFlZqC-13">
           <mxGeometry y="52" width="160" height="26" as="geometry" />
         </mxCell>
         <mxCell id="R7TlRQkgfvPTtNtFlZqC-35" value="+jouerNote()" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="R7TlRQkgfvPTtNtFlZqC-13">
