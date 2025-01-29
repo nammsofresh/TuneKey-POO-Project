@@ -104,17 +104,17 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Users\teamc\Documents\SFML\include</AdditionalIncludeDirectories>
-      <LanguageStandard>stdcpp17</LanguageStandard>
+      <AdditionalIncludeDirectories>
+      </AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp14</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>C:\Users\teamc\Documents\SFML\lib</AdditionalLibraryDirectories>
-      <AdditionalDependencies>sfml-audio-d.lib;sfml-system-d.lib
-;sfml-system.lib;
-sfml-audio.lib
-;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>
+      </AdditionalLibraryDirectories>
+      <AdditionalDependencies>
+      </AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -139,15 +139,19 @@ sfml-audio.lib
     <ClCompile Include="Instrument.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Piano.cpp" />
-    <ClCompile Include="TuneKey.cpp" />
+    <ClCompile Include="App.cpp" />
     <ClCompile Include="Xylophone.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Guitare.hpp" />
     <ClInclude Include="Instrument.hpp" />
     <ClInclude Include="Piano.hpp" />
-    <ClInclude Include="TuneKey.hpp" />
+    <ClInclude Include="App.hpp" />
     <ClInclude Include="Xylophone.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="mario.txt" />
+    <Text Include="starwars.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

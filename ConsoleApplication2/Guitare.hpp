@@ -2,11 +2,13 @@
 #define GUITARE_HPP
 
 #include "Instrument.hpp"
+using namespace std;
 
 class Guitare : public Instrument {
 public:
     Guitare();
-    void jouer_note(string note, string rythme) override;
+    void jouerNote(const string& note, const string& rythme) override;
+    void jouerPartition(const string& note, const string& rythme) override;
 };
 
 #endif // GUITARE_HPP

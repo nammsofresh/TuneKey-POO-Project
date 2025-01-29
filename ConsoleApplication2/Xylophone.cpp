@@ -1,16 +1,12 @@
 #include "Xylophone.hpp"
-#include <windows.h>
+#include <iostream>
 #include <map>
+#include <windows.h> // Pour Beep
 
 Xylophone::Xylophone() : Instrument("Xylophone") {}
 
-void Xylophone::jouer_note(string note, string rythme) {
-    map<string, float> ryth_l = {
-        { "lent", 2.0f },
-        { "normal", 1.0f },
-        { "rapide", 0.5f }
-    };
-    map<std::string, int> note_to_frequency = {
+void Xylophone::jouerNote(const string& note, const string& rythme) {
+    map<string, int> noteVersFrequence = {
         {"B0", 31}, {"C1", 33}, {"C#1", 35}, {"D1", 37}, {"D#1", 39}, {"E1", 41}, {"F1", 44}, {"F#1", 46}, {"G1", 49}, {"G#1", 52},
         {"A1", 55}, {"A#1", 58}, {"B1", 62}, {"C2", 65}, {"C#2", 69}, {"D2", 73}, {"D#2", 78}, {"E2", 82}, {"F2", 87}, {"F#2", 93},
         {"G2", 98}, {"G#2", 104}, {"A2", 110}, {"A#2", 117}, {"B2", 123}, {"C3", 131}, {"C#3", 139}, {"D3", 147}, {"D#3", 156},
@@ -22,11 +18,23 @@ void Xylophone::jouer_note(string note, string rythme) {
         {"C7", 2093}, {"C#7", 2217}, {"D7", 2349}, {"D#7", 2489}, {"E7", 2637}, {"F7", 2794}, {"F#7", 2960}, {"G7", 3136},
         {"G#7", 3322}, {"A7", 3520}, {"A#7", 3729}, {"B7", 3951}, {"C8", 4186}, {"C#8", 4435}, {"D8", 4699}, {"D#8", 4978}
     };
-    map<string, float> instr = {
-        { "Piano", 1.0 },
-        { "Guitare", 0.1 },
-        { "Xylophone", 2.5 },
+
+    map<string, float> rythmeMap = {
+        {"lent", 2.0}, {"normal", 1.0}, {"rapide", 0.5}
     };
-    cout << "[Xylophone - " << rythme << "] : " << note << endl;
-    Beep(static_cast<DWORD>(note_to_frequency[note] * instr[get_nom()]), static_cast<DWORD>(1000 * ryth_l[rythme]));
+
+    // Jouer la note
+    if (noteVersFrequence.find(note) != noteVersFrequence.end()) {
+        cout << "[Xylophone - " << rythme << "] : " << note << "\n";
+        DWORD duration = static_cast<DWORD>(1000 * rythmeMap[rythme]);
+        Beep(noteVersFrequence[note], duration);
+    }
+    else {
+        cout << "Note inconnue : " << note << "\n";
+    }
+}
+
+void Xylophone::jouerPartition(const string& cheminFichier, const string& rythme) {
+    cout << "[Xylophone] Jouer la partition depuis le fichier : " << cheminFichier << " avec le rythme : " << rythme << "\n";
+    Instrument::jouerPartition(cheminFichier, rythme);
 }

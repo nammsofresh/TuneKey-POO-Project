@@ -2,11 +2,13 @@
 #define XYLOPHONE_HPP
 
 #include "Instrument.hpp"
+using namespace std;
 
 class Xylophone : public Instrument {
 public:
     Xylophone();
-    void jouer_note(string note, string rythme) override;
+    void jouerNote(const string& note, const string& rythme) override;
+    void jouerPartition(const string& note, const string& rythme) override;
 };
 
 #endif // XYLOPHONE_HPP
